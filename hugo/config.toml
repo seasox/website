@@ -1,0 +1,17 @@
+baseurl = "http://jboy.eu"
+languageCode = "en-us"
+title = "jboy.eu"
+author = "Jeremy Boy"
+theme = "heather-hugo"
+pygmentsuseclasses = true
+publishdir = "public"
+
+IgnoreFiles = ".svn"
+
+[params]
+    logo = "/img/logo.jpg"
+    description = "code – media – stuff"
+    twitter = "https://twitter.com/HumZ91"
+    facebook = "https://www.facebook.com/schaerremyie"
+    github = "https://github.com/seasox"
+    email = "www@jboy.eu"

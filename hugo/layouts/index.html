@@ -1,0 +1,14 @@
+{{ partial "head.html" . }}
+
+<main class="pinned">
+    <article class="post">
+    {{ range .Data.Pages.ByWeight }}{{ if eq .Section "frontpage" }}
+	<h1>{{ .Title }}</h1>
+	{{ .Content }}
+    {{ end }}{{ end }}
+  </article>
+</main>
+
+{{ partial "blog.html" . }}
+
+{{ partial "foot.html" . }}
