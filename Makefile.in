@@ -6,3 +6,5 @@ HFLAGS := --source="hugo/"
 HFLAGS := $(HFLAGS) --config="hugo/config.toml"
 HFLAGS_SERVER := server $(HFLAGS) --baseUrl="http://127.0.0.1:1313" --watch 
 HFLAGS_INSTALL := $(HFLAGS) --destination="$(INSTALLPATH)"
+
+STATIC_DIR := hugo/static
