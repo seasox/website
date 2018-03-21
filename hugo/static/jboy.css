@@ -19,3 +19,10 @@ img.profile {
     width: 5em;
     float: left;
 }
+
+.illegal {
+    color: lightgray;
+    font-size: 0.5em;
+    text-align: center;
+    margin-bottom: 0;
+}
