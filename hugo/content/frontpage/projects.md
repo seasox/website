@@ -5,4 +5,7 @@ title = "Current projects"
 weight = 0
 +++
 
-- Coming soon: [Home automation with futureLiving](http://www.futureliving.eu)
+- Out now! [Home automation with futureLiving](http://www.futureliving.eu)
+- Coming soon: Awesome lighting
+
+<img src="img/matrix.gif" title="Matrix prototype in action">
