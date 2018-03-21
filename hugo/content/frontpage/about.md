@@ -5,4 +5,5 @@ title = "About"
 weight = 1
 +++
 
-I will use this site mostly for notes concering coding and stuff I found on the interwebz. I tend to be forgetful from time to time (:
+My name is Jeremy, I am a software developer and you probably don't give a shit about this.
+I will use this site mostly for notes concerning coding and stuff I found on the interwebz. I tend to be forgetful from time to time (:
