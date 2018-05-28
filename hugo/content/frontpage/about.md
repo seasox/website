@@ -2,7 +2,7 @@
 date = "2016-02-19T12:33:51+01:00"
 title = "About"
 
-weight = 1
+weight = 5
 +++
 
 My name is Jeremy, I am a software developer and you probably don't give a shit about this.
