@@ -5,7 +5,7 @@ title = "Uninstall Soundflower"
 
 +++
 
-Soundflower comes with an `Uninstal Soundflower.scpt` file. Yeah, [AppleScript](https://en.wikipedia.org/wiki/Pile_of_Poo_emoji) sucks, so this is what it does:
+Soundflower comes with an `Uninstall Soundflower.scpt` file. Yeah, [AppleScript](https://en.wikipedia.org/wiki/Pile_of_Poo_emoji) sucks, so this is what it does:
 
 <pre>
 sudo rm -rf /System/Library/Extensions/Soundflower.kext
