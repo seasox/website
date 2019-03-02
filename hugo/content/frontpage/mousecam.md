@@ -3,6 +3,7 @@ date = "2016-02-19T13:27:59+01:00"
 title = "Mouse cam"
 
 weight = 0
+draft = true
 +++
 <p>Now with <a href="/download/mouselapse/">mouselapse</a>!</p>
 

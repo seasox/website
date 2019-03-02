@@ -3,13 +3,13 @@
 <main class="pinned">
     <article class="post">
     {{ range .Data.Pages.ByWeight }}{{ if eq .Section "frontpage" }}
-	<h1>{{ .Title }}</h1>
+	<h2>{{ .Title }}</h2>
 	{{ .Content }}
     {{ end }}{{ end }}
   </article>
-</main>
-<main>
 
 {{ partial "blog.html" . }}
+
+</main>
 
 {{ partial "foot.html" . }}
