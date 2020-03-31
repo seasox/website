@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://jboy.eu/frontpage/about/</loc>
+    <lastmod>2016-02-19T12:33:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/frontpage/goodbye_wrm/</loc>
+    <lastmod>2019-03-02T13:27:59+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/frontpage/</loc>
+    <lastmod>2019-03-02T13:27:59+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/</loc>
+    <lastmod>2019-03-02T13:27:59+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/</loc>
+    <lastmod>2018-05-28T11:21:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/uninstall-soundflower/</loc>
+    <lastmod>2018-05-28T11:21:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/dateformatter-sample-data/</loc>
+    <lastmod>2017-08-02T15:48:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/bitshift-seems-legit/</loc>
+    <lastmod>2017-05-03T10:55:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/vim-termencoding/</loc>
+    <lastmod>2017-01-09T15:59:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/freebsd-parse-csv/</loc>
+    <lastmod>2017-01-09T11:20:28+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/ch340-ch341-serial-adapters-on-macos-1012-sierra/</loc>
+    <lastmod>2016-12-04T14:45:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/java-android-recyclerview-swipe-delete/</loc>
+    <lastmod>2016-11-11T12:20:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/java-retrofit-error-handling/</loc>
+    <lastmod>2016-08-26T10:41:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/osx-deinstall-fusion/</loc>
+    <lastmod>2016-07-31T14:22:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/osx-repair-sparsebundle/</loc>
+    <lastmod>2016-02-23T17:05:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/blog/osx-restore-afp/</loc>
+    <lastmod>2016-02-22T22:15:40+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jboy.eu/tags/</loc>
+  </url>
+  
+</urlset>

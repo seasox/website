@@ -1,0 +1,191 @@
+<!doctype html> 
+<html lang="en-us"> 
+<head>
+  <meta charset="utf-8">
+  <title>jboy.eu</title>
+  <meta name="author" content="">
+  <meta name="description" content="code | media | stuff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Hugo 0.68.3" />
+  
+  
+  <link rel="icon" href="/favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
+  
+  
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/jboy.css" />
+  <link rel="stylesheet" href="/pygments-default.css" />
+
+</head>
+<body>
+
+
+  <div class="wrap">
+    <header class="mb">
+      <h1 class="m-0"><a href="/">jboy.eu</a></h1>
+      <p>code | media | stuff</p>
+    </header>
+
+
+<main>
+<article class="post">
+  <h1><a href="http://jboy.eu/blog/freebsd-parse-csv/" title="Parse CSV files with FreeBSD">Parse CSV files with FreeBSD</a></h1>
+  <p>I recently read <a href="http://www.dalescott.net/manipulating-csv-format-files-on-unix/">a blog post by Dale Scott where he lists several options for parsing CSV files on UNIX systems</a>. Unfortunately, the comment section is closed, so I decided to add some lines here.</p>
+<p>In his article, Dale names 6 and describes 4 options for parsing CSV files on FreeBSD, namely:</p>
+<ul>
+<li><a href="http://neilb.bitbucket.org/csvfix">csvfix</a></li>
+<li><a href="https://github.com/wireservice/csvkit">csvkit</a></li>
+<li><a href="https://github.com/archiecobbs/csvprintf">csvprintf</a></li>
+<li><a href="https://github.com/Chris00/ocaml-csv">csvtool</a></li>
+</ul>
+<p>My personal use case is to parse a CSV file that contains crash reports for an app in Google Play Store. I need a software that accepts a CSV file and a format string (i.e. &ldquo;App Version %1, Exception %2…&quot;)
+and fills the placeholders with CSV columns. I tried to achieve this with csvtool first, which is present in the FreeBSD ports tree (<code>textproc/ocaml-csv</code>).</p>
+<h2 id="csvtool">csvtool</h2>
+<p>I started developing my script using ocaml-csv, which has a very handy program <code>csvtool</code>, which accepts an input file and a format string, just as I wanted:</p>
+<pre><code>jb@jb-mbp:~ % cat tmp/sample.csv 
+name,type,food
+John,nice,pizza
+Sue,sweet,taco
+jb@jb-mbp:~ % csvtool drop 1 tmp/sample.csv | csvtool format &quot;%1 is a %2 %3 eater\n&quot; -
+John is a nice pizza eater
+Sue is a sweet taco eater
+</code></pre>
+<p>After installing <code>textproc/ocaml-csv</code> on my FreeBSD box, I figured that <code>csvtool</code> is not installed as part of it. The sources for <code>csvtool</code> can be found here:</p>
+<pre><code>root@jb:~ # ls /usr/obj/usr/ports/textproc/ocaml-csv/work/csv-1.2.1/examples/
+.depend.ocaml Makefile      csvtool       csvtool.annot csvtool.cmi   csvtool.cmo   csvtool.exe   csvtool.ml    example.annot example.cmi   example.cmo   example.exe   example.ml    example1.csv  example2.csv
+</code></pre>
+<p>I might look into this when I find the time, but I had to get this script working, so I took a look at <code>csvkit</code> instead, which you should find at <code>textproc/py-csvkit</code>. <code>csvkit</code> comes with several tools, but I will only use two of them, <code>csvcut</code> and <code>csvformat</code>.</p>
+<h2 id="csvcut">csvcut</h2>
+<p><code>csvcut</code> lets you select columns from your input CSV file:</p>
+<pre><code>usage: csvcut [-h] [-d DELIMITER] [-t] [-q QUOTECHAR] [-u {0,1,2,3}] [-b]
+      [-p ESCAPECHAR] [-z MAXFIELDSIZE] [-e ENCODING] [-S] [-H] [-v]
+      [-l] [--zero] [-n] [-c COLUMNS] [-C NOT_COLUMNS] [-x]
+      [FILE]
+
+Filter and truncate CSV files. Like unix &quot;cut&quot; command, but for tabular data.
+
+positional arguments:
+  FILE                  The CSV file to operate on. If omitted, will accept
+            input on STDIN.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DELIMITER, --delimiter DELIMITER
+            Delimiting character of the input CSV file.
+  -t, --tabs            Specifies that the input CSV file is delimited with
+            tabs. Overrides &quot;-d&quot;.
+  -q QUOTECHAR, --quotechar QUOTECHAR
+            Character used to quote strings in the input CSV file.
+  -u {0,1,2,3}, --quoting {0,1,2,3}
+            Quoting style used in the input CSV file. 0 = Quote
+            Minimal, 1 = Quote All, 2 = Quote Non-numeric, 3 =
+            Quote None.
+  -b, --doublequote     Whether or not double quotes are doubled in the input
+            CSV file.
+  -p ESCAPECHAR, --escapechar ESCAPECHAR
+            Character used to escape the delimiter if --quoting 3
+            (&quot;Quote None&quot;) is specified and to escape the
+            QUOTECHAR if --doublequote is not specified.
+  -z MAXFIELDSIZE, --maxfieldsize MAXFIELDSIZE
+            Maximum length of a single field in the input CSV
+            file.
+  -e ENCODING, --encoding ENCODING
+            Specify the encoding the input CSV file.
+  -S, --skipinitialspace
+            Ignore whitespace immediately following the delimiter.
+  -H, --no-header-row   Specifies that the input CSV file has no header row.
+            Will create default headers.
+  -v, --verbose         Print detailed tracebacks when errors occur.
+  -l, --linenumbers     Insert a column of line numbers at the front of the
+            output. Useful when piping to grep or as a simple
+            primary key.
+  --zero                When interpreting or displaying column numbers, use
+            zero-based numbering instead of the default 1-based
+            numbering.
+  -n, --names           Display column names and indices from the input CSV
+            and exit.
+  -c COLUMNS, --columns COLUMNS
+            A comma separated list of column indices or names to
+            be extracted. Defaults to all columns.
+  -C NOT_COLUMNS, --not-columns NOT_COLUMNS
+            A comma separated list of column indices or names to
+            be excluded. Defaults to no columns.
+  -x, --delete-empty-rows
+            After cutting, delete rows which are completely empty.
+</code></pre>
+<h2 id="csvformat">csvformat</h2>
+<p><code>csvformat</code> lets you change the format of your CSV file. You can also pipe <code>csvcut</code> into <code>csvformat</code> (which I do):</p>
+<pre><code>usage: csvformat [-h] [-d DELIMITER] [-t] [-q QUOTECHAR] [-u {0,1,2,3}] [-b]
+         [-p ESCAPECHAR] [-z MAXFIELDSIZE] [-e ENCODING] [-S] [-v]
+         [-D OUT_DELIMITER] [-T] [-Q OUT_QUOTECHAR] [-U {0,1,2,3}]
+         [-B] [-P OUT_ESCAPECHAR] [-M OUT_LINETERMINATOR]
+         [FILE]
+
+Convert a CSV file to a custom output format.
+
+positional arguments:
+  FILE                  The CSV file to operate on. If omitted, will accept
+            input on STDIN.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DELIMITER, --delimiter DELIMITER
+            Delimiting character of the input CSV file.
+  -t, --tabs            Specifies that the input CSV file is delimited with
+            tabs. Overrides &quot;-d&quot;.
+  -q QUOTECHAR, --quotechar QUOTECHAR
+            Character used to quote strings in the input CSV file.
+  -u {0,1,2,3}, --quoting {0,1,2,3}
+            Quoting style used in the input CSV file. 0 = Quote
+            Minimal, 1 = Quote All, 2 = Quote Non-numeric, 3 =
+            Quote None.
+  -b, --doublequote     Whether or not double quotes are doubled in the input
+            CSV file.
+  -p ESCAPECHAR, --escapechar ESCAPECHAR
+            Character used to escape the delimiter if --quoting 3
+            (&quot;Quote None&quot;) is specified and to escape the
+            QUOTECHAR if --doublequote is not specified.
+  -z MAXFIELDSIZE, --maxfieldsize MAXFIELDSIZE
+            Maximum length of a single field in the input CSV
+            file.
+  -e ENCODING, --encoding ENCODING
+            Specify the encoding the input CSV file.
+  -S, --skipinitialspace
+            Ignore whitespace immediately following the delimiter.
+  -v, --verbose         Print detailed tracebacks when errors occur.
+  -D OUT_DELIMITER, --out-delimiter OUT_DELIMITER
+            Delimiting character of the output CSV file.
+  -T, --out-tabs        Specifies that the output CSV file is delimited with
+            tabs. Overrides &quot;-D&quot;.
+  -Q OUT_QUOTECHAR, --out-quotechar OUT_QUOTECHAR
+            Character used to quote strings in the output CSV
+            file.
+  -U {0,1,2,3}, --out-quoting {0,1,2,3}
+            Quoting style used in the output CSV file. 0 = Quote
+            Minimal, 1 = Quote All, 2 = Quote Non-numeric, 3 =
+            Quote None.
+  -B, --out-doublequote
+            Whether or not double quotes are doubled in the output
+            CSV file.
+  -P OUT_ESCAPECHAR, --out-escapechar OUT_ESCAPECHAR
+            Character used to escape the delimiter in the output
+            CSV file if --quoting 3 (&quot;Quote None&quot;) is specified
+            and to escape the QUOTECHAR if --doublequote is not
+            specified.
+  -M OUT_LINETERMINATOR, --out-lineterminator OUT_LINETERMINATOR
+            Character used to terminate lines in the output CSV
+            file.
+</code></pre>
+<p>(To be continued)</p>
+
+  <p class="small gray"><time datetime="2017-01-09">Jan 09, 2017</time></p>
+</article>
+</main>
+<p class="illegal">
+4856507896573978293098418946942861377074420873513579240196520736 6869851340104723744696879743992611751097377770102744752804905883 1384037549709987909653955227011712157025974666993240226834596619 6060348517424977358468518855674570257125474999648219418465571008 4119086259716947970799152004866709975923596061320725973797993618 8606316914473588300245336972781813914797955513399949394882899846 9178361001825978901031601961835034344895687053845208538045842415 6548248893338047475871128339598968522325446084089711197712769412 0795862440547161321005006459820176961771809478113622002723448272 2493232595472346880029277764979061481298404283457201463489685471 6908235473783566197218622496943162271666393905543024156473292485 5248991225739466548627140482117138124388217717602984125524464744 5055834628144883356319027253195904392838737640739168912579240550 1562088978716337599910788708490815909754801928576845198859630532 3823490558092032999603234471140776019847163531161713078576084862 2363702835701049612595681846785965333100770179916146744725492728 3348691600064758591746278121269007351830924153010630289329566584 3662000800476778967984382090797619859493646309380586336721469695 9750279687712057249966669805614533820741203159337703099491527469 1835659376210222006812679827344576093802030447912277498091795593 8387121000588766689258448700470772552497060444652127130404321182 610103591186476662963858495087448497373476861420880529443</p>
+<p class="illegal"><a href="https://en.wikipedia.org/wiki/Illegal_prime">wat?</a></p>
+</div>
+</body>
+</html>
+

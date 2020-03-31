@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frontpages on jboy.eu</title>
+    <link>http://jboy.eu/frontpage/</link>
+    <description>Recent content in Frontpages on jboy.eu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Mar 2019 13:27:59 +0100</lastBuildDate>
+    
+	<atom:link href="http://jboy.eu/frontpage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://jboy.eu/frontpage/about/</link>
+      <pubDate>Fri, 19 Feb 2016 12:33:51 +0100</pubDate>
+      
+      <guid>http://jboy.eu/frontpage/about/</guid>
+      <description>My name is Jeremy, I am a software developer and you probably don&amp;rsquo;t give a shit about this. I will use this site mostly for notes concerning coding and stuff I found on the interwebz. I also do some photography stuff. Check my instagram so I can become famous.</description>
+    </item>
+    
+    <item>
+      <title>Farewell</title>
+      <link>http://jboy.eu/frontpage/goodbye_wrm/</link>
+      <pubDate>Sat, 02 Mar 2019 13:27:59 +0100</pubDate>
+      
+      <guid>http://jboy.eu/frontpage/goodbye_wrm/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

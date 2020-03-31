@@ -1,0 +1,84 @@
+<!doctype html> 
+<html lang="en-us"> 
+<head>
+  <meta charset="utf-8">
+  <title>jboy.eu</title>
+  <meta name="author" content="">
+  <meta name="description" content="code | media | stuff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Hugo 0.68.3" />
+  
+  
+  <link rel="icon" href="/favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
+  
+  
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/jboy.css" />
+  <link rel="stylesheet" href="/pygments-default.css" />
+
+</head>
+<body>
+
+
+  <div class="wrap">
+    <header class="mb">
+      <h1 class="m-0"><a href="/">jboy.eu</a></h1>
+      <p>code | media | stuff</p>
+    </header>
+
+
+<main>
+<article class="post">
+  <h1><a href="http://jboy.eu/blog/dateformatter-sample-data/" title="Swift DateFormatter sample data">Swift DateFormatter sample data</a></h1>
+  <div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="c1">//: Playground - noun: a place where people can play</span>
+
+<span class="kd">import</span> <span class="nc">Foundation</span>
+
+<span class="kd">extension</span> <span class="nc">DateFormatter</span><span class="p">.</span><span class="n">Style</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">styleName</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="kc">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">full</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&#34;.full&#34;</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">long</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&#34;.long&#34;</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">medium</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&#34;.medium&#34;</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">short</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&#34;.short&#34;</span>
+        <span class="k">case</span> <span class="p">.</span><span class="kr">none</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&#34;.none&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nv">locales</span> <span class="p">=</span> <span class="p">[</span> <span class="n">Locale</span><span class="p">(</span><span class="n">identifier</span><span class="p">:</span> <span class="s">&#34;de_DE&#34;</span><span class="p">),</span> <span class="n">Locale</span><span class="p">(</span><span class="n">identifier</span><span class="p">:</span> <span class="s">&#34;en_US&#34;</span><span class="p">),</span> <span class="n">Locale</span><span class="p">(</span><span class="n">identifier</span><span class="p">:</span> <span class="s">&#34;fr_FR&#34;</span><span class="p">),</span> <span class="n">Locale</span><span class="p">(</span><span class="n">identifier</span><span class="p">:</span> <span class="s">&#34;es_ES&#34;</span><span class="p">),</span> <span class="n">Locale</span><span class="p">(</span><span class="n">identifier</span><span class="p">:</span> <span class="s">&#34;ru_RU&#34;</span><span class="p">)</span> <span class="p">]</span>
+<span class="kd">let</span> <span class="nv">styles</span> <span class="p">=</span> <span class="p">[</span> <span class="n">DateFormatter</span><span class="p">.</span><span class="n">Style</span><span class="p">.</span><span class="kr">none</span><span class="p">,</span> <span class="n">DateFormatter</span><span class="p">.</span><span class="n">Style</span><span class="p">.</span><span class="n">short</span><span class="p">,</span> <span class="n">DateFormatter</span><span class="p">.</span><span class="n">Style</span><span class="p">.</span><span class="n">medium</span><span class="p">,</span> <span class="n">DateFormatter</span><span class="p">.</span><span class="n">Style</span><span class="p">.</span><span class="n">long</span><span class="p">,</span> <span class="n">DateFormatter</span><span class="p">.</span><span class="n">Style</span><span class="p">.</span><span class="n">full</span> <span class="p">]</span>
+
+<span class="kd">let</span> <span class="nv">dateFormatter</span> <span class="p">=</span> <span class="n">DateFormatter</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">locale</span> <span class="k">in</span> <span class="n">locales</span> <span class="p">{</span>
+    <span class="n">dateFormatter</span><span class="p">.</span><span class="n">locale</span> <span class="p">=</span> <span class="n">locale</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&#34;Locale: </span><span class="si">\(</span><span class="n">locale</span><span class="p">.</span><span class="n">debugDescription</span><span class="si">)</span><span class="s">&#34;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">timeStyle</span> <span class="k">in</span> <span class="n">styles</span> <span class="p">{</span>
+        <span class="n">dateFormatter</span><span class="p">.</span><span class="n">timeStyle</span> <span class="p">=</span> <span class="n">timeStyle</span>
+        <span class="k">for</span> <span class="n">dateStyle</span> <span class="k">in</span> <span class="n">styles</span> <span class="p">{</span>
+            <span class="n">dateFormatter</span><span class="p">.</span><span class="n">dateStyle</span> <span class="p">=</span> <span class="n">dateStyle</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\t</span><span class="s">timeStyle: </span><span class="si">\(</span><span class="n">timeStyle</span><span class="p">.</span><span class="n">styleName</span><span class="si">)</span><span class="s">, dateStyle: </span><span class="si">\(</span><span class="n">dateStyle</span><span class="p">.</span><span class="n">styleName</span><span class="si">)</span><span class="s">&#34;</span><span class="p">)</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\t\t</span><span class="si">\(</span><span class="n">dateFormatter</span><span class="p">.</span><span class="n">string</span><span class="si">(</span><span class="n">from</span><span class="p">:</span> <span class="n">Date</span><span class="si">()))</span><span class="s">&#34;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+  <p class="small gray"><time datetime="2017-08-02">Aug 02, 2017</time></p>
+</article>
+</main>
+<p class="illegal">
+4856507896573978293098418946942861377074420873513579240196520736 6869851340104723744696879743992611751097377770102744752804905883 1384037549709987909653955227011712157025974666993240226834596619 6060348517424977358468518855674570257125474999648219418465571008 4119086259716947970799152004866709975923596061320725973797993618 8606316914473588300245336972781813914797955513399949394882899846 9178361001825978901031601961835034344895687053845208538045842415 6548248893338047475871128339598968522325446084089711197712769412 0795862440547161321005006459820176961771809478113622002723448272 2493232595472346880029277764979061481298404283457201463489685471 6908235473783566197218622496943162271666393905543024156473292485 5248991225739466548627140482117138124388217717602984125524464744 5055834628144883356319027253195904392838737640739168912579240550 1562088978716337599910788708490815909754801928576845198859630532 3823490558092032999603234471140776019847163531161713078576084862 2363702835701049612595681846785965333100770179916146744725492728 3348691600064758591746278121269007351830924153010630289329566584 3662000800476778967984382090797619859493646309380586336721469695 9750279687712057249966669805614533820741203159337703099491527469 1835659376210222006812679827344576093802030447912277498091795593 8387121000588766689258448700470772552497060444652127130404321182 610103591186476662963858495087448497373476861420880529443</p>
+<p class="illegal"><a href="https://en.wikipedia.org/wiki/Illegal_prime">wat?</a></p>
+</div>
+</body>
+</html>
+

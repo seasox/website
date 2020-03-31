@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on jboy.eu</title>
+    <link>http://jboy.eu/blog/</link>
+    <description>Recent content in Blogs on jboy.eu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 May 2018 11:21:44 +0200</lastBuildDate>
+    
+	<atom:link href="http://jboy.eu/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Uninstall Soundflower</title>
+      <link>http://jboy.eu/blog/uninstall-soundflower/</link>
+      <pubDate>Mon, 28 May 2018 11:21:44 +0200</pubDate>
+      
+      <guid>http://jboy.eu/blog/uninstall-soundflower/</guid>
+      <description>Soundflower comes with an Uninstall Soundflower.scpt file. Yeah, AppleScript sucks, so this is what it does:
+kkthxbye</description>
+    </item>
+    
+    <item>
+      <title>Swift DateFormatter sample data</title>
+      <link>http://jboy.eu/blog/dateformatter-sample-data/</link>
+      <pubDate>Wed, 02 Aug 2017 15:48:31 +0200</pubDate>
+      
+      <guid>http://jboy.eu/blog/dateformatter-sample-data/</guid>
+      <description>//: Playground - noun: a place where people can play import Foundation extension DateFormatter.Style { var styleName: String { switch self { case .full: return &amp;#34;.full&amp;#34; case .long: return &amp;#34;.long&amp;#34; case .medium: return &amp;#34;.medium&amp;#34; case .short: return &amp;#34;.short&amp;#34; case .none: return &amp;#34;.none&amp;#34; } } } let locales = [ Locale(identifier: &amp;#34;de_DE&amp;#34;), Locale(identifier: &amp;#34;en_US&amp;#34;), Locale(identifier: &amp;#34;fr_FR&amp;#34;), Locale(identifier: &amp;#34;es_ES&amp;#34;), Locale(identifier: &amp;#34;ru_RU&amp;#34;) ] let styles = [ DateFormatter.Style.none, DateFormatter.Style.short, DateFormatter.Style.medium, DateFormatter.Style.long, DateFormatter.Style.full ] let dateFormatter = DateFormatter() for locale in locales { dateFormatter.</description>
+    </item>
+    
+    <item>
+      <title>Bitshift: seems legit</title>
+      <link>http://jboy.eu/blog/bitshift-seems-legit/</link>
+      <pubDate>Wed, 03 May 2017 10:55:44 +0200</pubDate>
+      
+      <guid>http://jboy.eu/blog/bitshift-seems-legit/</guid>
+      <description>¯\_(ツ)_/¯</description>
+    </item>
+    
+    <item>
+      <title>VIM UTF-8 Terminal Encoding with ISO8859-1 files</title>
+      <link>http://jboy.eu/blog/vim-termencoding/</link>
+      <pubDate>Mon, 09 Jan 2017 15:59:01 +0100</pubDate>
+      
+      <guid>http://jboy.eu/blog/vim-termencoding/</guid>
+      <description>I will forget this in 42 seconds, but will need it in 42 months (thanks, automatthias):
+set termencoding=utf-8 set fileencoding=latin1  </description>
+    </item>
+    
+    <item>
+      <title>Parse CSV files with FreeBSD</title>
+      <link>http://jboy.eu/blog/freebsd-parse-csv/</link>
+      <pubDate>Mon, 09 Jan 2017 11:20:28 +0100</pubDate>
+      
+      <guid>http://jboy.eu/blog/freebsd-parse-csv/</guid>
+      <description>I recently read a blog post by Dale Scott where he lists several options for parsing CSV files on UNIX systems. Unfortunately, the comment section is closed, so I decided to add some lines here.
+In his article, Dale names 6 and describes 4 options for parsing CSV files on FreeBSD, namely:
+ csvfix csvkit csvprintf csvtool  My personal use case is to parse a CSV file that contains crash reports for an app in Google Play Store.</description>
+    </item>
+    
+    <item>
+      <title>CH340 CH341 serial adapters on macOS 10.12 Sierra</title>
+      <link>http://jboy.eu/blog/ch340-ch341-serial-adapters-on-macos-1012-sierra/</link>
+      <pubDate>Sun, 04 Dec 2016 14:45:05 +0100</pubDate>
+      
+      <guid>http://jboy.eu/blog/ch340-ch341-serial-adapters-on-macos-1012-sierra/</guid>
+      <description>It took me some hours to make my macOS 10.12 Sierra installation to not panic after plugging in arduino clones with CH340 USB2Serial chips. This tzapu.com blog post helped me. They also provide a download link to a signed kernel extension for CH340 USB2Serial which I installed on my system.
+Good luck!</description>
+    </item>
+    
+    <item>
+      <title>Android: RecyclerView with swipe to delete, no 3rd party libs</title>
+      <link>http://jboy.eu/blog/java-android-recyclerview-swipe-delete/</link>
+      <pubDate>Fri, 11 Nov 2016 12:20:00 +0100</pubDate>
+      
+      <guid>http://jboy.eu/blog/java-android-recyclerview-swipe-delete/</guid>
+      <description>This blog post helped me a lot implementing swipe-to-delete for an Android app I am currently developing.
+Check this blog post from Nemanja Kovacevic</description>
+    </item>
+    
+    <item>
+      <title>Retrofit 2 -- Error Handling with backend returning 200 OK on error</title>
+      <link>http://jboy.eu/blog/java-retrofit-error-handling/</link>
+      <pubDate>Fri, 26 Aug 2016 10:41:50 +0100</pubDate>
+      
+      <guid>http://jboy.eu/blog/java-retrofit-error-handling/</guid>
+      <description>Stack Overflow: Retrofit2 - Error Handling</description>
+    </item>
+    
+    <item>
+      <title>Deinstall VMWare Fusion on OSX</title>
+      <link>http://jboy.eu/blog/osx-deinstall-fusion/</link>
+      <pubDate>Sun, 31 Jul 2016 14:22:00 +0100</pubDate>
+      
+      <guid>http://jboy.eu/blog/osx-deinstall-fusion/</guid>
+      <description>you&amp;rsquo;re welcome</description>
+    </item>
+    
+    <item>
+      <title>Repair sparse bundle for Time Machine</title>
+      <link>http://jboy.eu/blog/osx-repair-sparsebundle/</link>
+      <pubDate>Tue, 23 Feb 2016 17:05:32 +0100</pubDate>
+      
+      <guid>http://jboy.eu/blog/osx-repair-sparsebundle/</guid>
+      <description>sudo -s cd /Volumes/TimeMachineBackup chflags -R nouchg atar.sparsebundle hdiutil attach -nomount -noverify -noautofsck atar.sparsebundle /dev/disk2 Apple_partition_scheme /dev/disk2s1 Apple_partition_map /dev/disk2s2 Apple_HFSX fsck_hfs -drfy /dev/disk2s2 </description>
+    </item>
+    
+    <item>
+      <title>Restore Mac OS X 10.11 El Capitan from Time Machine backup on AFP</title>
+      <link>http://jboy.eu/blog/osx-restore-afp/</link>
+      <pubDate>Mon, 22 Feb 2016 22:15:40 +0100</pubDate>
+      
+      <guid>http://jboy.eu/blog/osx-restore-afp/</guid>
+      <description>I recently had difficulties restoring a Time Machine backup which is stored on a netatalk server to a MacBook Pro using the builtin Recovery Mode.
+mkdir /Volumes/backup mount_afp afp://user:pwd@example.org/afpShareName /Volumes/backup hdid /Volumes/backup/$SPARSBUNDLENAME This fixes the issue. :-)</description>
+    </item>
+    
+  </channel>
+</rss>
