@@ -1,0 +1,3 @@
+[submodule "hugo/themes/heather-hugo"]
+	path = hugo/themes/heather-hugo
+	url = https://github.com/hbpasti/heather-hugo
