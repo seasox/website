@@ -1,6 +1,11 @@
+:root {
+	color-scheme: light dark;
+}
+
 body {
     font-family: 'Helvetica Neue', sans-serif;
     max-width: 100%;
+    color: inherit;
 }
 
 .header-logo {
