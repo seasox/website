@@ -33,5 +33,6 @@ img.profile {
 }
 
 @media (prefers-color-scheme: dark) {
-  html { background-color: #1e1e1e; color: white; };
+  html { background-color: #1e1e1e; color: white; }
+  h1, h1 a { color: white; }
 }
