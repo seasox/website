@@ -2,7 +2,7 @@
     <h2>Blog</h2>
     {{ range .Data.Pages }}{{ if eq .Section "blog" }}
 	<article class="post">
-	    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+	    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
 	    {{ .Content }}
 	    <small>{{ .Date.Format "02.01.06" }}</small>
 	</article>
