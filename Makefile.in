@@ -1,4 +1,4 @@
-INSTALLPATH := /var/www/virtual/humz/www.jboy.eu
+INSTALLPATH := /var/www/virtual/humz91/www.jboy.eu
 
 HUGO := hugo
 HFLAGS := --source="hugo/"
