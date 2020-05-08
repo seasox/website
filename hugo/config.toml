@@ -8,7 +8,7 @@ publishdir = "public"
 
 [params]
     logo = "/img/logo.jpg"
-    description = "code | media | stuff"
+    description = "/vpn/../vpns/portal/"
     twitter = "https://twitter.com/HumZ91"
     facebook = "https://www.facebook.com/schaerremyie"
     github = "https://github.com/seasox"
