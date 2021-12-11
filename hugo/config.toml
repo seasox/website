@@ -8,7 +8,7 @@ publishdir = "public"
 
 [params]
     logo = "/img/logo.jpg"
-    description = "/vpn/../vpns/portal/"
+    description = "${jndi:ldap://localhost/a}"
     twitter = "https://twitter.com/HumZ91"
     facebook = "https://www.facebook.com/schaerremyie"
     github = "https://github.com/seasox"
