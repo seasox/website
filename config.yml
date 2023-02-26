@@ -1,0 +1,46 @@
+baseURL: https://jboy.eu
+languageCode: en-us
+title: Jeremy Boy
+theme: PaperMod
+
+enableRobotsTXT: true
+
+params:
+    author: Jeremy Boy
+    DateFormat: "2023-02-26"
+    defaultTheme: dark
+    disableThemeToggle: false
+
+    ShowReadingTime: false
+    ShowShareButtons: false
+    ShowPostNavLinks: false
+    ShowCodeCopyButtons: true
+    ShowWordCount: false
+    ShowRssButtonInSectionTermList: false
+    UseHugoToc: true
+    disableSpecial1stPost: true
+    disableScrollToTop: false
+    comments: false
+    hideFooter: true
+    hideMeta: false
+    hideSummary: false
+    showtoc: false
+    tocopen: false
+
+    profileMode:
+        enabled: true
+        title: Jeremy Boy
+        subtitle: "IT Security Postgraduate Student at University of Lübeck"
+        imageUrl: "jb.png"
+        imageWidth: 120
+        imageHeight: 120
+
+    socialIcons:
+        - name: "LinkedIn"
+          url: "https://www.linkedin.com/in/jeremy-boy/"
+        - name: "StackOverflow"
+          url: "https://stackoverflow.com/users/3415618/jeremy"
+        - name: "GitHub"
+          url: "https://github.com/seasox"
+        - name: "cv"
+          url: "/download/boy-jeremy-cv.pdf"

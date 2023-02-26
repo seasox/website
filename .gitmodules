@@ -4,3 +4,9 @@
 [submodule "hugo/themes/hugo-resume"]
 	path = hugo/themes/hugo-resume
 	url = https://github.com/eddiewebb/hugo-resume
+[submodule "hugo/themes/anatole"]
+	path = hugo/themes/anatole
+	url = https://github.com/lxndrblz/anatole.git
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod
